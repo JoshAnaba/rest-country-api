@@ -1,8 +1,10 @@
 <template>
   <div class="rounded w-48 h-64 shadow-md cursor-pointer">
-    <img :src="country.flag" :alt="`flag of ${country.name}`" class="rounded-t">
+    <div class="img-div h-1/2">
+    <img :src="country.flag" :alt="`flag of ${country.name}`" class="rounded-t h-full w-full">
+    </div>
     <div class="content p-2.5">
-      <p class="text-lg font-medium">
+      <p class="text-base font-semibold">
         {{country.name}}
       </p>
       <div class="little-content">

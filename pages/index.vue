@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+    <div class="six"></div>
+    <div class="seven"></div>
     <div class="flex flex-wrap gap-10 justify-space-between">
       <CountryContainer
         v-for="country in countries"
@@ -43,3 +50,40 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+* {
+  font-size: 14px;
+}
+
+.one {
+  background: var(--dark-blue-dm-el);
+  width: 50px;
+  height: 50px
+}
+.two {
+  background: var(--very-dark-blue-dm-bg);
+  width: 50px;
+  height: 50px
+}
+.three {
+  background: var(--very-dark-blue-lm-txt);
+  width: 50px;
+  height: 50px
+}
+.four {
+  background: var(--dark-gray-lm-in);
+  width: 50px;
+  height: 50px
+}
+.five {
+  background: var(--very-light-gray-lm-bg);
+  width: 50px;
+  height: 50px
+}
+.six {
+  background: var(--white);
+  width: 50px;
+  height: 50px
+}
+</style>
