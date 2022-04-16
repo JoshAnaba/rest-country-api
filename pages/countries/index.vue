@@ -32,8 +32,7 @@ export default {
   },
   methods: {
     goTo (c) {
-      this.$store.commit('storeCountry', c)
-      this.$router.push('/')
+      this.$router.push(`/countries/${c.name}?country=${c.name}`)
     },
     async fetchCountries() {
       await this.$axios({

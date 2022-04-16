@@ -1,18 +1,8 @@
 <template>
   <div>
-    <div class="one"></div>
-    <div class="two"></div>
-    <div class="three"></div>
-    <div class="four"></div>
-    <div class="five"></div>
-    <div class="six"></div>
-    <div class="seven"></div>
     <div class="flex flex-wrap gap-10 justify-space-between">
       <CountryContainer
-        v-for="country in countries"
-        :key="country.name"
         :country="country"
-        @go-to="goTo(country)"
       />
     </div>
   </div>
@@ -24,25 +14,24 @@ export default {
   layout: 'mainLayout',
   data() {
     return {
-      countries: [],
+      country: {}
     }
   },
   created() {
-    this.fetchCountries()
+    this.fetchCountry()
   },
   methods: {
     goTo (c) {
       this.$store.commit('storeCountry', c)
       this.$router.push('/')
     },
-    async fetchCountries() {
+    async fetchCountry() {
       await this.$axios({
-        url: 'all',
+        url: `name/${this.$route.query.country}`,
         method: 'GET',
       })
         .then((onfulfilled) => {
-          this.countries = onfulfilled.data
-          // console.log(this.countries[0])
+          this.country = onfulfilled.data[0]
         })
         .catch((err) => {
           const errorMsg = err.response?.data?.message

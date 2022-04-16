@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded w-48 h-64 shadow-md cursor-pointer">
+  <div class="rounded w-48 h-64 shadow-md cursor-pointer" @click="$emit('go-to')">
     <div class="img-div h-1/2">
     <img :src="country.flag" :alt="`flag of ${country.name}`" class="rounded-t h-full w-full">
     </div>
@@ -47,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.content-value {
+  color: var(--dark-gray-lm-in);
+}
+</style>
