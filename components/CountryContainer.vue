@@ -1,7 +1,7 @@
 <template>
   <div class="rounded w-48 h-64 shadow-md cursor-pointer">
     <img :src="country.flag" :alt="`flag of ${country.name}`" class="rounded-t">
-    <div class="content">
+    <div class="content p-2.5">
       <p class="text-lg font-medium">
         {{country.name}}
       </p>

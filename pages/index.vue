@@ -1,6 +1,12 @@
 <template>
-  <div class="flex flex-wrap gap-10">
-    <CountryContainer v-for="country in countries" :key="country.name" :country="country" />
+  <div>
+    <div class="flex flex-wrap gap-10 justify-space-between">
+      <CountryContainer
+        v-for="country in countries"
+        :key="country.name"
+        :country="country"
+      />
+    </div>
   </div>
 </template>
 
@@ -8,16 +14,16 @@
 export default {
   name: 'IndexPage',
   layout: 'mainLayout',
-  data () {
+  data() {
     return {
-      countries: []
+      countries: [],
     }
   },
-  created () {
+  created() {
     this.fetchCountries()
   },
   methods: {
-      async fetchCountries() {
+    async fetchCountries() {
       await this.$axios({
         url: 'all',
         method: 'GET',
@@ -34,6 +40,6 @@ export default {
           this.loading = false
         })
     },
-  }
+  },
 }
 </script>
