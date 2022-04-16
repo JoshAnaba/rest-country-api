@@ -24,10 +24,10 @@ export default {
       })
         .then((onfulfilled) => {
           this.countries = onfulfilled.data
+          // console.log(this.countries[0])
         })
         .catch((err) => {
           const errorMsg = err.response?.data?.message
-
           this.$toast.global.custom_error(errorMsg)
         })
         .finally(() => {

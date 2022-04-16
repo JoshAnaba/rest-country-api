@@ -54,4 +54,41 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  loading: {
+    height: '4px',
+    color: '#44c3d2'
+  },
+  toast: {
+    position: 'top-right',
+    register: [
+      {
+        name: 'custom_success',
+        message: message => message,
+        options: {
+          type: 'success',
+          duration: 3000,
+          action: {
+            icon: 'close',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0)
+            }
+          }
+        }
+      },
+      {
+        name: 'custom_error',
+        message: message => message,
+        options: {
+          type: 'error',
+          duration: 3000,
+          action: {
+            icon: 'close',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0)
+            }
+          }
+        }
+      }
+    ]
+  }
 }
