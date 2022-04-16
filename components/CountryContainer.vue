@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img :src="country.flag" :alt="`${country.name} flag`" class="rounded w-48 h-64">
+  <div class="rounded w-48 h-64 shadow-md">
+    <img :src="country.flag" :alt="`flag of ${country.name}`" class="rounded-t">
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap gap-10">
     <CountryContainer v-for="country in countries" :key="country.name" :country="country" />
   </div>
 </template>
